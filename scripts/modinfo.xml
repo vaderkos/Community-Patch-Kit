@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="f2d38419-c5b1-4c70-9ccd-e281e4325da7" version="1">
+  <Properties>
+    <Name>Community Patch Kit</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>Community Patch Kit</Teaser>
+    <Description>Community Patch Kit</Description>
+    <Authors>vaderkos</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <Homepage>http://https://github.com/vaderkos/Community-Patch-Kit</Homepage>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References />
+  <Blocks />
+	<Files>
+__FILES__
+  </Files>
+</Mod>
