@@ -1,0 +1,24 @@
+{
+	"LuaCATS Example in description on newline": {
+		"scope": "lua",
+		"prefix": ["--- @example"],
+		"body": [
+			"--- ```lua",
+			"--- -- Example",
+			"--- $0",
+			"--- ```"
+		],
+		"description": "Create example in LuaCATS description"
+	},
+	"LuaCATS Example in description in description": {
+		"scope": "lua",
+		"prefix": "@example",
+		"body": [
+			"```lua",
+			"--- -- Example",
+			"--- $0",
+			"--- ```"
+		],
+		"description": "Create example in LuaCATS description"
+	}
+}

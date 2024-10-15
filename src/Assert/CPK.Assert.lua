@@ -1,0 +1,1 @@
+CPK.Assert = CPK.Module()
