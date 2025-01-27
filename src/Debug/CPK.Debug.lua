@@ -1,0 +1,1 @@
+CPK.Debug = CPK.Module()

@@ -1,4 +1,4 @@
--- TODO
+local AssertIsNumber = CPK.Assert.IsNumber
 
 --- Checks if the specified number is odd and not zero.
 --- This function returns `true` if the number is not zero and its remainder when divided by 2 is not zero, indicating it is odd.
@@ -16,8 +16,9 @@
 --- @return boolean # `true` if the number is odd, `false` otherwise.
 --- @nodiscard
 local function IsOdd(num)
-	-- TODO Assert
-	return (num % 2) ~= 0 and (num ~= 0) 
+	AssertIsNumber(num)
+
+	return (num % 2) ~= 0 and (num ~= 0)
 end
 
 CPK.Number.IsOdd = IsOdd

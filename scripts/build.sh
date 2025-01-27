@@ -27,8 +27,6 @@ while IFS= read -r file; do
   xml="${xml}${entry}\n"
 done < <(find "$SEARCH_DIR" -type f -name "*.lua")
 
-echo $xml
-
 sed "s|__FILES__|$xml|" "$INPUT_FILE" > "$OUTPUT_FILE"
 
 echo "Generated $OUTPUT_FILE"

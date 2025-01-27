@@ -1,0 +1,1 @@
+CPK.Game = CPK.Module()

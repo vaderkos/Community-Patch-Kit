@@ -1,8 +1,8 @@
 local _lua_select = select
 
-local _civ_locale_lookup = Locale.Lookup or function(val) return val end
+local _civ_locale_lookup = Locale.Lookup or function(val) return val end -- stub function in non-civ environment
 
-local Cache = CPK.Text.Cache
+local Cache = CPK.Game.Text.Cache
 local Memoize1 = CPK.FP.Memoize1
 local Identity = CPK.FP.Identity
 
@@ -16,4 +16,4 @@ local function Localize(textKey, ...)
 	return _Localize(textKey)
 end
 
-CPK.Text.Localize = Localize
+CPK.Game.Text.Localize = Localize

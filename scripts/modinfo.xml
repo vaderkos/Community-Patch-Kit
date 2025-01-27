@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="f2d38419-c5b1-4c70-9ccd-e281e4325da7" version="1">
+<Mod id="f2d38419-c5b1-4c70-9ccd-e281e4325da7" version="__VERSION__">
   <Properties>
     <Name>Community Patch Kit</Name>
     <Stability>Alpha</Stability>

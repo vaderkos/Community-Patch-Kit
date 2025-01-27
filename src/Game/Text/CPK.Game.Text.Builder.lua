@@ -12,18 +12,18 @@ local AssertIsString = CPK.Assert.IsString
 
 local Builder = {}
 
-CPK.Text.Builder = Builder
+CPK.Game.Text.Builder = Builder
 
---- @class CPK.Text.Builder
+--- @class CPK.Game.Text.Builder
 --- @field _table string[]
 Builder.__index = {}
 
---- Creates new text builder. 
---- Use it for building complex strings instead of concatenation within loops 
+--- Creates new text builder.
+--- Use it for building complex strings instead of concatenation within loops
 --- as it produces a lot of intermideate garbage strings which leads to slow execution.
 function Builder.new()
-	--- @type CPK.Text.Builder
 	local this = { _table = {} }
+	--[[@cast this CPK.Game.Text.Builder]]
 
 	return _lua_setmetatable(this, Builder)
 end
@@ -74,7 +74,7 @@ end
 function Builder.__index:AppendLocalize(textKey, ...)
 	AssertIsString(textKey)
 
-	_lua_table_insert(self._table, Localize(textKey, ... ))
+	_lua_table_insert(self._table, Localize(textKey, ...))
 
 	return self
 end
@@ -85,7 +85,7 @@ end
 function Builder.__index:PrependLocalize(textKey, ...)
 	AssertIsString(textKey)
 
-	_lua_table_insert(self._table, 1, Localize(textKey, ... ))
+	_lua_table_insert(self._table, 1, Localize(textKey, ...))
 
 	return self
 end
@@ -113,22 +113,35 @@ function Builder.__index:PrependFormat(textPattern, ...)
 end
 
 --- Joins all fragments from builder into final string using specified separator.
---- If separator is not specified 
---- 
+--- If separator is not specified joins with empty string.
+---
 --- ```lua
 --- -- Example
---- local TextBuilder = CPK.Text.Builder
+--- local TextBuilder = CPK.Game.Text.Builder
 --- local builder = TextBuilder.new()
 --- builder:Append("apple")
 --- builder:Append("banana")
 --- builder:Prepend("grape")
 --- print(builder:Join(", ")) -- Output: grape, apple, banana
 --- print(builder:Join()) -- Output: grapeapplebanana
---- 
 --- ```
+---
 --- @param separator? string
 function Builder.__index:Join(separator)
 	return _lua_table_concat(self._table, separator)
+end
+
+--- Joins all fragments from builder into final string using specified separator.
+--- After joining clears builder.
+--- @param separator? string
+--- @return string
+--- @see CPK.Game.Text.Builder.Join
+--- @see CPK.Game.Text.Builder.Clear
+function Builder.__index:JoinAndClear(separator)
+	local result = self:Join(separator)
+	self:Clear()
+
+	return result
 end
 
 --- Creates new copy of builder
@@ -139,6 +152,3 @@ function Builder.__index:Copy()
 
 	return builder
 end
-
-
-

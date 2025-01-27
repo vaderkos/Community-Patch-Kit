@@ -7,6 +7,6 @@ stds.CPK = {
     globals = { 'CPK', 'CPK_VERBOSE' }
 }
 stds.CIV = {
-    globals = { 'Locale', 'include' }
+    globals = { 'Locale', 'include', 'StateName' }
 }
 std = 'min+CPK+CIV'

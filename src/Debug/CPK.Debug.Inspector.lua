@@ -17,9 +17,9 @@ local IsFunction = CPK.Type.IsFunction
 local AssertIsString = CPK.Assert.IsString
 
 local Inspector = {}
-CPK.Util.Inspector = Inspector
+CPK.Debug.Inspector = Inspector
 
---- @class CPK.Util.Inspector
+--- @class CPK.Debug.Inspector
 Inspector.__index = {}
 --- @protected
 --- @type number
@@ -39,7 +39,7 @@ Inspector.__index._indent = ''
 
 --- Creates new inspector instance
 --- @param indent? string | number
---- @return CPK.Util.Inspector
+--- @return CPK.Debug.Inspector
 function Inspector.new(indent)
 	local this = {
 		_count = 0,
@@ -103,7 +103,7 @@ end
 
 --- Clears internal cache table.
 --- @protected
---- @return CPK.Util.Inspector
+--- @return CPK.Debug.Inspector
 function Inspector.__index:_Clear()
 	self._count = 0
 	self._cache = {}

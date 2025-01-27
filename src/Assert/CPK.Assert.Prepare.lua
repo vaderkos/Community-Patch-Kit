@@ -14,7 +14,7 @@ local AssertError = CPK.Assert.Error
 ---
 --- @param exp string # Type that is included in error as expected.
 --- @param tst fun(val: any): boolean # A function that tests whether the value matches the expected type.
---- @return fun(val: any, mes?: string) # A function that asserts the value against test function and throws an error if test fails.
+--- @return fun(val: any, mes?: string, lvl?: integer) # A function that asserts the value against test function and throws an error if test fails.
 local function PrepareAssert(exp, tst)
 	--- Asserts that the specified value matches the expected type using provided function.
 	--- Throws an error if the assertion fails.

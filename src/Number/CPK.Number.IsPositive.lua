@@ -1,3 +1,5 @@
+local AssertIsNumber = CPK.Assert.IsNumber
+
 --- Checks if the specified number is positive.
 --- This function returns `true` if the number is greater than zero, otherwise `false`.
 ---
@@ -13,7 +15,8 @@
 --- @return boolean # `true` if the number is positive, `false` otherwise.
 --- @nodiscard
 local function IsPositive(num)
-	-- TODO assert
+	AssertIsNumber(num)
+
 	return num > 0
 end
 

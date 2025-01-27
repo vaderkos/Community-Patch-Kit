@@ -1,6 +1,6 @@
 local _lua_setmetatable = setmetatable
 
-local Inspector = CPK.Util.Inspector
+local Inspector = CPK.Debug.Inspector
 local indentedCache = _lua_setmetatable({}, { __mode = 'v' })
 local cachedNilInspector = nil
 
@@ -13,14 +13,14 @@ local function GetInspector(indent)
 		return cachedNilInspector
 	end
 
-	local insp = indentedCache[indent]
+	local inspector = indentedCache[indent]
 
-	if insp == nil then
-		insp = Inspector.new(indent)
-		indentedCache[indent] = insp
+	if inspector == nil then
+		inspector = Inspector.new(indent)
+		indentedCache[indent] = inspector
 	end
 
-	return insp
+	return inspector
 end
 
 --- Converts specified value to string
@@ -64,4 +64,4 @@ local function Inspect(val, indent)
 	return GetInspector(indent):Inspect(val)
 end
 
-CPK.Util.Inspect = Inspect
+CPK.Debug.Inspect = Inspect

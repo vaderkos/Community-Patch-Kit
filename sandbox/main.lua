@@ -100,7 +100,7 @@ require('src/CPK')
 -- print(builder:Join(", ")) -- Output: grape, apple, banana
 -- print(builder:Join()) -- Output: grapeapplebanana
 
-local Inspect = CPK.Util.Inspect
+local Inspect = CPK.Debug.Inspect
 
 
 local data = { a = 1, b = 2, [3] = 4, test = { hello = 'world' } }
